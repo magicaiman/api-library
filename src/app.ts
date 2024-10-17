@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
-
+import { User } from "./models/user.model";
 import { RegisterRoutes } from "./routes/index"; // tsoa va générer ce fichier
 import errorHandler from "./middlewares/errorHandler";
 

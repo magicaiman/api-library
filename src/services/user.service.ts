@@ -17,13 +17,14 @@ export class UserService {
       notFound("User");
     }
   }
-  // Crée un nouvel utilisateur
+  // Crée un nouvel utilisateur and encode base64 the password
   public async createUser(
     username: string,
     password: string,
   ): Promise<UserOutputDTO> {
+    const encodedPassword = Buffer.from(password).toString('base64');
     return UserMapper.toOutputDto(
-      await User.create({ username: username, password: password }),
+      await User.create({ username: username, password: encodedPassword }),
     );
   }
   // Supprime un utilisateur par ID
