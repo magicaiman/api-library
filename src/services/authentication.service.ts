@@ -45,13 +45,18 @@ export class AuthentificationService {
                 ];
             case 'gerant':
                 return [
+                    'author:read',
                     'book:read',
                     'book:create',
                     'book:delete',
+                    'bookCollection:read',
+                    'bookCollection:create',
+                    'bookCollection:delete',
                 ];
             case 'utilisateur':
                 return [
                     'book:read',
+                    'book:create',
                 ];
             default:
                 return [];
